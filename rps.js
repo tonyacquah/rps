@@ -42,7 +42,7 @@ const game = () => {
             userSelection = prompt(promptText)
             userSelection = userSelection.toUpperCase()
             promptText = "Invalid input. Check and type again"
-        } while (userSelection != "ROCK" && userSelection != "PAPER" && userSelection != "SCISSORS") //input validation
+        } while (userSelection != "ROCK" && userSelection != "PAPER" && userSelection != "SCISSORS") //input validationadde
 
         console.log(playRound(userSelection)); //should happen 5 times
     }
