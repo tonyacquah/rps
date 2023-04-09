@@ -48,7 +48,7 @@ const playRound = playerSelection => {
 
 //playRound("SCISSORS"); //for debugging
 
-const game = () => {
+/*const game = () => {
     for (let i = 0; i < 5; i++) {
         let userSelection
         let promptText = "Type ROCK, PAPER or SCISSORS"
@@ -61,10 +61,10 @@ const game = () => {
         console.log(playRound(userSelection)); //should happen 5 times
     }
 
-}
+}*/
 
-/*const game = () => {
-    for (let i = 0; i < 5; i++)
+const game = () => {
+
 
         do {
             let userSelection
@@ -79,6 +79,6 @@ const game = () => {
 
         } while () //until someone gets 5
 
-}*/
+}
 
 game();
