@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    /*text-align: center;*/
+}
+
+
+
+.instructions {
+    padding-left: 8vw;
+    padding-right: 8vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.images {
+    border-radius: 5px;
+    height: 150px;
+}
+
+.gamepad {
+    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4vw;
+    gap: 5px;
+    justify-content: center;
+    /*align-content: center;*/
+}
+
+.rock,
+.scissors,
+.paper {
+    flex: 1;
+}
+
+body {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+}
+.taunt {
+    text-align: center;
+    margin-top: 10px;
+}

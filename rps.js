@@ -63,10 +63,10 @@ const playRound = playerSelection => {
 
 }*/
 
-const game = () => {
+const game = (userSelection) => {
 
 
-        do {
+       /* do {
             let userSelection
             let promptText = "Type ROCK, PAPER or SCISSORS"
             do {
@@ -77,8 +77,21 @@ const game = () => {
 
             console.log(playRound(userSelection)); //should happen 5 times
 
-        } while () //until someone gets 5
+        } while () //until someone gets 5*/ // This implementation was useful in an earlier version which was a console game only - No GUI 
+        
+        let resultArr = []
+        let computerGameScores =0
+        let playerGameScores =0
 
+        do {
+            //playRound
+           resultArr= playRound(userSelection)
+            playerGameScores *=resultArr[1]
+            computerGameScores +=resultArr[2]
+            //display the string and the results on the screen
+
+
+        } while (playerGameScores<5 || computerGameScores<5)//while no one has up to 5
 }
 
-game();
+game("ROCK");

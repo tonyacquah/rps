@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -13,32 +14,34 @@
     <div>
         <H1>Let's play a game of ROCK PAPER SCISSORS</h1>
     </div>
-
+    <hr>
     <!------------------Intro----------------------------------->
-    <div>
-        <hr>
+    <div class="instructions">
+    
         <ul>
             <li><strong>Rock</strong> beats <strong>Scissors</strong>:   because it can bend and break scissors</li>
             <li><strong>Scissors</strong> beats <strong>Paper</strong>:  because - obviously...</li>
             <li><strong>Paper</strong> beats <strong>Rock</strong>:      because a paper can cover a rock</li>
         </ul>
-        First to 5 points. Sure you can beat me?
+        
         </p>
     </div>
     <hr>
+    <p class="taunt">First to 5 points. Sure you can beat me?</p>
     <!----------------------Gamepad------------------------------>
-    <div>
-        <div id="rock-img">
-            <img src="images/rock.png">
+    <div class="gamepad">
+        <div class="rock">
+            <img class="images" src="images/rock.png" onclick="game('ROCK')">
         </div>
-        <div id="scissors-img">
-            <img src="images/scissors.png">
+        <div class="scissors">
+            <img class="images" src="images/scissors.png" onclick="game('SCISSORS')">
         </div>
-        <div id="paper-img">
-            <img src="images/paper.png">
+        <div class="paper">
+            <img class="images" src="images/paper.png"onclick="game('PAPER')">
         </div>
     </div>
     <!------------------result Display----------------------------->
+
 
     <script src="rps.js"></script>
 </body>
