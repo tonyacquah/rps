@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
-    <div> <H1>Let's play a game of ROCK PAPER SCISSORS</h1></div>
-        <div><strong>How is it played?</strong>
-        <p>Yow will play against me (The computer) Ha!<br>Can you win?</p>
-    <p>If I chose a more powerful object, I win. If yours is more powerful, you win. Here are the rules:
+    <!--------------Title------------------------------------>
+    <div>
+        <H1>Let's play a game of ROCK PAPER SCISSORS</h1>
+    </div>
+
+    <!------------------Intro----------------------------------->
+    <div>
+        <hr>
         <ul>
-            <li>Rock is more powerful than scissors (because it can bend and break Scissors)</li>
-            <l1>Scissors is more powerful than Paper (because - know)</l1>
-            <li>Paper surprisingly wins over Rock (because a paper can cover a rock)</li>
+            <li><strong>Rock</strong> beats <strong>Scissors</strong>:   because it can bend and break scissors</li>
+            <li><strong>Scissors</strong> beats <strong>Paper</strong>:  because - obviously...</li>
+            <li><strong>Paper</strong> beats <strong>Rock</strong>:      because a paper can cover a rock</li>
         </ul>
+        First to 5 points. Sure you can beat me?
+        </p>
+    </div>
+    <hr>
+    <!----------------------Gamepad------------------------------>
+    <div>
+        <div id="rock-img">
+            <img src="images/rock.png">
+        </div>
+        <div id="scissors-img">
+            <img src="images/scissors.png">
+        </div>
+        <div id="paper-img">
+            <img src="images/paper.png">
+        </div>
+    </div>
+    <!------------------result Display----------------------------->
 
-        So here's the summary:
-        <table>
-            <tr><td>Rock beats Scissors</td></tr>
-            <tr><td>Scissors beats paper</td></tr>
-            <tr><td>Paper beats Rock</td></tr>
-        </table>
-
-    </p></div>
-
-    <p>This game works in the developer tools console. Right click the page and choose inspect. Then refresh the page</p>
     <script src="rps.js"></script>
 </body>
+
 </html>
