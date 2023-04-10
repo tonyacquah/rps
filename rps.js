@@ -46,9 +46,29 @@ const playRound = playerSelection => {
     return roundResultArr
 }
 
-//playRound("SCISSORS"); //for debugging
+//console.log(playRound("SCISSORS")); //for debugging
+const game = () =>{
+const rock =document.querySelector('.rock')
+const scissors = document.querySelector('.scissors')
+const paper = document.querySelector('.paper')
 
-/*const game = () => {
+
+
+
+let playerGameScores = 0
+let computerGameScores = 0
+while (playerGameScores<5 && computerGameScores<5){
+
+let resultArr = playRound(prompt("enter your choice"))
+console.log(resultArr)
+playerGameScores +=resultArr[1]
+computerGameScores +=resultArr[2]
+console.log("player", playerGameScores)
+console.log("computer",computerGameScores)
+}
+}
+game();
+/*const game = () => { 
     for (let i = 0; i < 5; i++) {
         let userSelection
         let promptText = "Type ROCK, PAPER or SCISSORS"
@@ -62,36 +82,3 @@ const playRound = playerSelection => {
     }
 
 }*/
-
-const game = (userSelection) => {
-
-
-       /* do {
-            let userSelection
-            let promptText = "Type ROCK, PAPER or SCISSORS"
-            do {
-                userSelection = prompt(promptText)
-                userSelection = userSelection.toUpperCase()
-                promptText = "Invalid input. Check and type again"
-            } while (userSelection != "ROCK" && userSelection != "PAPER" && userSelection != "SCISSORS") //input validationadde
-
-            console.log(playRound(userSelection)); //should happen 5 times
-
-        } while () //until someone gets 5*/ // This implementation was useful in an earlier version which was a console game only - No GUI 
-        
-        let resultArr = []
-        let computerGameScores =0
-        let playerGameScores =0
-
-        do {
-            //playRound
-           resultArr= playRound(userSelection)
-            playerGameScores *=resultArr[1]
-            computerGameScores +=resultArr[2]
-            //display the string and the results on the screen
-
-
-        } while (playerGameScores<5 || computerGameScores<5)//while no one has up to 5
-}
-
-game("ROCK");

@@ -3,7 +3,7 @@
 * {
     font-family: 'Roboto', sans-serif;
     margin: 0px;
-    /*text-align: center;*/
+
 }
 
 
@@ -19,6 +19,12 @@
 .images {
     border-radius: 5px;
     height: 150px;
+}
+.images:hover{
+    border: 4px solid;
+    opacity: 0.9;
+    transform: scale(1.1);
+   
 }
 
 .gamepad {
@@ -46,4 +52,5 @@ body {
 .taunt {
     text-align: center;
     margin-top: 10px;
+    font-weight: bold;
 }
