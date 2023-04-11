@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
     <!--------------Title------------------------------------>
     <div>
         <H1>Let's play a game of ROCK PAPER SCISSORS</h1>
@@ -17,31 +18,37 @@
     <hr>
     <!------------------Intro----------------------------------->
     <div class="instructions">
-    
+
         <ul>
-            <li><strong>Rock</strong> beats <strong>Scissors</strong>:   because it can bend and break scissors</li>
-            <li><strong>Scissors</strong> beats <strong>Paper</strong>:  because - obviously...</li>
-            <li><strong>Paper</strong> beats <strong>Rock</strong>:      because a paper can cover a rock</li>
+            <li><strong>Rock</strong> beats <strong>Scissors</strong>: because it can bend and break scissors</li>
+            <li><strong>Scissors</strong> beats <strong>Paper</strong>: because - obviously...</li>
+            <li><strong>Paper</strong> beats <strong>Rock</strong>: because a paper can cover a rock</li>
         </ul>
-        
+
         </p>
     </div>
     <hr>
     <p class="taunt">First to 5 points. Sure you can beat me?</p>
     <!----------------------Gamepad------------------------------>
     <div class="gamepad">
-        <div class="rock">
+        <div class="rock" onClick="playRock()">
             <img class="images" src="images/rock.png">
         </div>
-        <div class="scissors">
+        <div class="scissors" onClick="playScissors()">
             <img class="images" src="images/scissors.png">
         </div>
-        <div class="paper">
+        <div class="paper" onClick="playPaper()">
             <img class="images" src="images/paper.png">
         </div>
     </div>
     <!------------------result Display----------------------------->
+    <div class="scoreBoard"></div>
 
+    <!--------------------Trophy Presentation-------------------------->
+    <div class="trophy">
+        test
+    </div>
+    <div><button>Play Again</button></div>
 
     <script src="rps.js"></script>
 </body>

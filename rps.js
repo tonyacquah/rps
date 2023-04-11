@@ -20,7 +20,7 @@ const playRound = playerSelection => {
     let roundResultArr = [];
     let computerSelection = getComputerChoice()
     playerSelection = playerSelection.toUpperCase()
-   // console.log(computerSelection) //for debugging
+    // console.log(computerSelection) //for debugging
     //console.log(playerSelection) //for debugging
     if (playerSelection === computerSelection) {
         roundResultStr = `Draw: Play again. ${playerSelection} : ${computerSelection}`
@@ -30,55 +30,88 @@ const playRound = playerSelection => {
     } else if ((playerSelection === "ROCK" && computerSelection === "SCISSORS") || //mulltiline if statement containing all the posibilities the ***player wins****
         (playerSelection === "PAPER" && computerSelection === "ROCK") ||
         (playerSelection === "SCISSORS" && computerSelection === "PAPER")) {
-        roundResultStr = `You Win! ${playerSelection} beats ${computerSelection}`
+        roundResultStr = `You won this round : ${playerSelection} beats ${computerSelection}`
         roundScorePlayer = 1
         roundScoreComputer = 0
     }
     else if ((computerSelection === "ROCK" && playerSelection === "SCISSORS") || //mulltiline if statement containing all the posibilities the ***computer wins****
         (computerSelection === "PAPER" && playerSelection === "ROCK") ||
         (computerSelection === "SCISSORS" && playerSelection === "PAPER")) {
-        roundResultStr = `You Lose! ${computerSelection} beats ${playerSelection}`
+        roundResultStr = `You lost this round: ${computerSelection} beats ${playerSelection}`
         roundScorePlayer = 0
         roundScoreComputer = 1
     }
     roundResultArr.push(roundResultStr, roundScorePlayer, roundScoreComputer)
-    //console.log(roundResultArr)
+    console.log(roundResultArr)
     return roundResultArr
 }
 
 //console.log(playRound("SCISSORS")); //for debugging
-const game = () =>{
-const rock =document.querySelector('.rock')
-const scissors = document.querySelector('.scissors')
-const paper = document.querySelector('.paper')
 
-
-
-
+let resultArr = []
 let playerGameScores = 0
 let computerGameScores = 0
-while (playerGameScores<5 && computerGameScores<5){
 
-let resultArr = playRound(prompt("enter your choice"))
-console.log(resultArr)
-playerGameScores +=resultArr[1]
-computerGameScores +=resultArr[2]
-console.log("player", playerGameScores)
-console.log("computer",computerGameScores)
+const scoreBoard = document.querySelector('.scoreBoard')
+
+//const rock = document.querySelector('.rock')
+//const scissors = document.querySelector('.scissors')
+//const paper = document.querySelector('.paper')
+
+
+const playRock = () => {
+    
+    if (playerGameScores < 5 && computerGameScores < 5){
+    resultArr = playRound("ROCK")
+    console.log("clicked rock")
+    playerGameScores +=resultArr[1]
+    computerGameScores +=resultArr[2]
+    console.log("player", playerGameScores)
+    console.log("computer",computerGameScores)
+    scoreBoard.innerHTML = `${resultArr[0]}\n Player ${playerGameScores} : ${computerGameScores} Computer`
+    } else {game()}
 }
+
+//scissors.addEventListener('click', () => {
+    const playScissors = () =>{
+    if (playerGameScores < 5 && computerGameScores < 5){
+    resultArr = playRound("SCISSORS")
+    console.log("clicked scissors")
+    playerGameScores +=resultArr[1]
+    computerGameScores +=resultArr[2]
+    console.log("player", playerGameScores)
+    console.log("computer",computerGameScores)
+    scoreBoard.innerHTML = `${resultArr[0]}\n Player ${playerGameScores} : ${computerGameScores} Computer`
+} else {game()}
 }
-game();
-/*const game = () => { 
-    for (let i = 0; i < 5; i++) {
-        let userSelection
-        let promptText = "Type ROCK, PAPER or SCISSORS"
-        do {
-            userSelection = prompt(promptText)
-            userSelection = userSelection.toUpperCase()
-            promptText = "Invalid input. Check and type again"
-        } while (userSelection != "ROCK" && userSelection != "PAPER" && userSelection != "SCISSORS") //input validationadde
 
-        console.log(playRound(userSelection)); //should happen 5 times
-    }
 
-}*/
+//paper.addEventListener('click', () => {
+   const playPaper = () =>{
+    if (playerGameScores < 5 && computerGameScores < 5){
+    resultArr = playRound("PAPER")
+    console.log("clicked paper")
+    playerGameScores +=resultArr[1]
+    computerGameScores +=resultArr[2]
+    console.log("player", playerGameScores)
+    console.log("computer",computerGameScores)
+    scoreBoard.innerHTML = `${resultArr[0]}\n Player ${playerGameScores} : ${computerGameScores} Computer`
+} else {game()}
+}
+
+
+const game = () => {
+    
+    console.log("final result")
+    console.log(resultArr)
+    scoreBoard.innerHTML = `${resultArr[0]}\n Player ${playerGameScores} : ${computerGameScores} Computer <br> Play again?`
+     
+    
+
+    
+ 
+    
+    
+}
+    
+  
