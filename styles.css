@@ -26,7 +26,7 @@
 .images:hover{
     border: 4px solid;
     opacity: 0.9;
-    transform: scale(1.1);
+    /*transform: scale(1.1);*/
    
 }
 
@@ -67,4 +67,16 @@ font-weight: 700;
 padding: 20px;
 background-color: burlywood;
 color:brown;
+}
+.trophy {
+    padding:20px;
+}
+button {
+    
+    padding: 15px;
+    background-color: bisque;
+    color: brown;
+    font-weight: bold;
+    box-shadow: none;
+    
 }

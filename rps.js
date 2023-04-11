@@ -51,67 +51,79 @@ const playRound = playerSelection => {
 let resultArr = []
 let playerGameScores = 0
 let computerGameScores = 0
-
+let welcomeText="Click an item to begin"
 const scoreBoard = document.querySelector('.scoreBoard')
+const trophy = document.querySelector('.trophy')
+const reloadButton = document.querySelector('.reloadButton')
 
-//const rock = document.querySelector('.rock')
-//const scissors = document.querySelector('.scissors')
-//const paper = document.querySelector('.paper')
 
+//on pageload
+scoreBoard.innerHTML=welcomeText
 
 const playRock = () => {
-    
-    if (playerGameScores < 5 && computerGameScores < 5){
-    resultArr = playRound("ROCK")
-    console.log("clicked rock")
-    playerGameScores +=resultArr[1]
-    computerGameScores +=resultArr[2]
-    console.log("player", playerGameScores)
-    console.log("computer",computerGameScores)
-    scoreBoard.innerHTML = `${resultArr[0]}\n Player ${playerGameScores} : ${computerGameScores} Computer`
-    } else {game()}
+
+    if (playerGameScores < 5 && computerGameScores < 5) {
+        resultArr = playRound("ROCK")
+        console.log("clicked rock")
+        playerGameScores += resultArr[1]
+        computerGameScores += resultArr[2]
+        console.log("player", playerGameScores)
+        console.log("computer", computerGameScores)
+        scoreBoard.innerHTML = `${resultArr[0]} |  Player ${playerGameScores} : ${computerGameScores} Computer`
+    } else { game() }
 }
 
 //scissors.addEventListener('click', () => {
-    const playScissors = () =>{
-    if (playerGameScores < 5 && computerGameScores < 5){
-    resultArr = playRound("SCISSORS")
-    console.log("clicked scissors")
-    playerGameScores +=resultArr[1]
-    computerGameScores +=resultArr[2]
-    console.log("player", playerGameScores)
-    console.log("computer",computerGameScores)
-    scoreBoard.innerHTML = `${resultArr[0]}\n Player ${playerGameScores} : ${computerGameScores} Computer`
-} else {game()}
+const playScissors = () => {
+    if (playerGameScores < 5 && computerGameScores < 5) {
+        resultArr = playRound("SCISSORS")
+        console.log("clicked scissors")
+        playerGameScores += resultArr[1]
+        computerGameScores += resultArr[2]
+        console.log("player", playerGameScores)
+        console.log("computer", computerGameScores)
+        scoreBoard.innerHTML = `${resultArr[0]}  |  Player ${playerGameScores} : ${computerGameScores} Computer`
+    } else { game() }
 }
 
 
 //paper.addEventListener('click', () => {
-   const playPaper = () =>{
-    if (playerGameScores < 5 && computerGameScores < 5){
-    resultArr = playRound("PAPER")
-    console.log("clicked paper")
-    playerGameScores +=resultArr[1]
-    computerGameScores +=resultArr[2]
-    console.log("player", playerGameScores)
-    console.log("computer",computerGameScores)
-    scoreBoard.innerHTML = `${resultArr[0]}\n Player ${playerGameScores} : ${computerGameScores} Computer`
-} else {game()}
+const playPaper = () => {
+    if (playerGameScores < 5 && computerGameScores < 5) {
+        resultArr = playRound("PAPER")
+        console.log("clicked paper")
+        playerGameScores += resultArr[1]
+        computerGameScores += resultArr[2]
+        console.log("player", playerGameScores)
+        console.log("computer", computerGameScores)
+        scoreBoard.innerHTML = `${resultArr[0]}  |  Player ${playerGameScores} : ${computerGameScores} Computer`
+    } else { game() }
 }
 
 
 const game = () => {
-    
+
     console.log("final result")
     console.log(resultArr)
-    scoreBoard.innerHTML = `${resultArr[0]}\n Player ${playerGameScores} : ${computerGameScores} Computer <br> Play again?`
-     
-    
 
-    
- 
-    
-    
+    if (resultArr[0].includes("won")) {
+        scoreBoard.innerHTML = `Ah! Lucky you. Player ${playerGameScores} : ${computerGameScores} Computer`
+        trophy.innerHTML = `<img src="images/trophy.png">`
+    } else {
+
+        scoreBoard.innerHTML = `You Lost. Player ${playerGameScores} : ${computerGameScores} Computer`
+        trophy.innerHTML = `<img src="images/oh-dear.png">`
+    }
+
+   reloadButton.innerHTML=`<button onclick="reload()">Play Again</button>` 
+
 }
-    
-  
+
+const reload = () =>{
+    //resultArr = []
+    playerGameScores=0
+    computerGameScores=0
+    scoreBoard.innerHTML = `${welcomeText}`
+    trophy.innerHTML = " "
+    reloadButton.innerHTML =" " //Note to self: alternative to all of this is to call a js method to reload the browser page
+}
