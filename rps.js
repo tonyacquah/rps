@@ -23,42 +23,44 @@ const playRound = playerSelection => {
     // console.log(computerSelection) //for debugging
     //console.log(playerSelection) //for debugging
     if (playerSelection === computerSelection) {
-        roundResultStr = `Draw: Play again. ${playerSelection} : ${computerSelection}`
+        roundResultStr = `Draw: Play again.`// ${playerSelection} : ${computerSelection}`
         roundScorePlayer = roundScoreComputer = 0
 
 
     } else if ((playerSelection === "ROCK" && computerSelection === "SCISSORS") || //mulltiline if statement containing all the posibilities the ***player wins****
         (playerSelection === "PAPER" && computerSelection === "ROCK") ||
         (playerSelection === "SCISSORS" && computerSelection === "PAPER")) {
-        roundResultStr = `You won this round : ${playerSelection} beats ${computerSelection}`
+        roundResultStr = `You won this round`// : ${playerSelection} beats ${computerSelection}`
         roundScorePlayer = 1
         roundScoreComputer = 0
     }
     else if ((computerSelection === "ROCK" && playerSelection === "SCISSORS") || //mulltiline if statement containing all the posibilities the ***computer wins****
         (computerSelection === "PAPER" && playerSelection === "ROCK") ||
         (computerSelection === "SCISSORS" && playerSelection === "PAPER")) {
-        roundResultStr = `You lost this round: ${computerSelection} beats ${playerSelection}`
+        roundResultStr = `You lost this round`//: ${computerSelection} beats ${playerSelection}`
         roundScorePlayer = 0
         roundScoreComputer = 1
     }
-    roundResultArr.push(roundResultStr, roundScorePlayer, roundScoreComputer)
+    roundResultArr.push(roundResultStr, roundScorePlayer, roundScoreComputer,computerSelection)
     console.log(roundResultArr)
     return roundResultArr
 }
 
-//console.log(playRound("SCISSORS")); //for debugging
+//console.log(playRound("SCISSORS")); //for debugging &#x2B06;"
 
 let resultArr = []
 let playerGameScores = 0
 let computerGameScores = 0
-let welcomeText="Click an item to begin"
+let welcomeText="Click an item to begin &#x2B06;"
 const scoreBoard = document.querySelector('.scoreBoard')
 const trophy = document.querySelector('.trophy')
 const reloadButton = document.querySelector('.reloadButton')
+const showchoices = document.querySelector('.showChoices')
 
 
 //on pageload
 scoreBoard.innerHTML=welcomeText
+showchoices.innerHTML=""
 
 const playRock = () => {
 
@@ -70,6 +72,7 @@ const playRock = () => {
         console.log("player", playerGameScores)
         console.log("computer", computerGameScores)
         scoreBoard.innerHTML = `${resultArr[0]} |  Player ${playerGameScores} : ${computerGameScores} Computer`
+        showchoices.innerHTML = `Player <strong>ROCK</strong> : <strong>${resultArr[3]}</strong> Computer`
     } else { game() }
 }
 
@@ -83,6 +86,7 @@ const playScissors = () => {
         console.log("player", playerGameScores)
         console.log("computer", computerGameScores)
         scoreBoard.innerHTML = `${resultArr[0]}  |  Player ${playerGameScores} : ${computerGameScores} Computer`
+        showchoices.innerHTML = `Player <strong>SCISSORS</strong> : <strong>${resultArr[3]}</strong> Computer`
     } else { game() }
 }
 
@@ -97,6 +101,7 @@ const playPaper = () => {
         console.log("player", playerGameScores)
         console.log("computer", computerGameScores)
         scoreBoard.innerHTML = `${resultArr[0]}  |  Player ${playerGameScores} : ${computerGameScores} Computer`
+        showchoices.innerHTML = `Player <strong>PAPER</strong> : <strong>${resultArr[3]}</strong> Computer`
     } else { game() }
 }
 
@@ -125,5 +130,7 @@ const reload = () =>{
     computerGameScores=0
     scoreBoard.innerHTML = `${welcomeText}`
     trophy.innerHTML = " "
-    reloadButton.innerHTML =" " //Note to self: alternative to all of this is to call a js method to reload the browser page
+    reloadButton.innerHTML =" " 
+    showchoices.innerHTML=" "
+    //Note to self: alternative to all of this is to call a js method to reload the browser page
 }
