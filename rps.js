@@ -51,7 +51,7 @@ const playRound = playerSelection => {
 let resultArr = []
 let playerGameScores = 0
 let computerGameScores = 0
-let welcomeText="Click an item to begin &#x2B06;"
+let welcomeText="Click an item to begin"// &#x2B06;"
 const scoreBoard = document.querySelector('.scoreBoard')
 const trophy = document.querySelector('.trophy')
 const reloadButton = document.querySelector('.reloadButton')
