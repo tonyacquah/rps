@@ -71,7 +71,7 @@ const playRock = () => {
         computerGameScores += resultArr[2]
         console.log("player", playerGameScores)
         console.log("computer", computerGameScores)
-        scoreBoard.innerHTML = `${resultArr[0]} |  Player ${playerGameScores} : ${computerGameScores} Computer`
+        scoreBoard.innerHTML = `${resultArr[0]} <br>  Player ${playerGameScores} : ${computerGameScores} Computer`
         showchoices.innerHTML = `Player <strong>ROCK</strong> : <strong>${resultArr[3]}</strong> Computer`
     } else { game() }
 }
@@ -85,7 +85,7 @@ const playScissors = () => {
         computerGameScores += resultArr[2]
         console.log("player", playerGameScores)
         console.log("computer", computerGameScores)
-        scoreBoard.innerHTML = `${resultArr[0]}  |  Player ${playerGameScores} : ${computerGameScores} Computer`
+        scoreBoard.innerHTML = `${resultArr[0]}  <br>  Player ${playerGameScores} : ${computerGameScores} Computer`
         showchoices.innerHTML = `Player <strong>SCISSORS</strong> : <strong>${resultArr[3]}</strong> Computer`
     } else { game() }
 }
@@ -100,7 +100,7 @@ const playPaper = () => {
         computerGameScores += resultArr[2]
         console.log("player", playerGameScores)
         console.log("computer", computerGameScores)
-        scoreBoard.innerHTML = `${resultArr[0]}  |  Player ${playerGameScores} : ${computerGameScores} Computer`
+        scoreBoard.innerHTML = `${resultArr[0]}  <br>  Player ${playerGameScores} : ${computerGameScores} Computer`
         showchoices.innerHTML = `Player <strong>PAPER</strong> : <strong>${resultArr[3]}</strong> Computer`
     } else { game() }
 }
@@ -112,11 +112,11 @@ const game = () => {
     console.log(resultArr)
 
     if (resultArr[0].includes("won")) {
-        scoreBoard.innerHTML = `Ah! Lucky you. Player ${playerGameScores} : ${computerGameScores} Computer`
+        scoreBoard.innerHTML = `Ah! Lucky you. <br>Player ${playerGameScores} : ${computerGameScores} Computer`
         trophy.innerHTML = `<img src="images/trophy.png">`
     } else {
 
-        scoreBoard.innerHTML = `You Lost. Player ${playerGameScores} : ${computerGameScores} Computer`
+        scoreBoard.innerHTML = `You Lost. <br>Player ${playerGameScores} : ${computerGameScores} Computer`
         trophy.innerHTML = `<img src="images/oh-dear.png">`
     }
 
