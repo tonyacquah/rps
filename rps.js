@@ -129,12 +129,15 @@ const game = () => {
 };
 
 const reload = () => {
-  //resultArr = []
+
+  /*
   playerGameScores = 0;
   computerGameScores = 0;
   scoreBoard.innerHTML = `${welcomeText}`;
   trophy.innerHTML = " ";
   reloadButton.innerHTML = " ";
   showchoices.innerHTML = " ";
-  //Note to self: alternative to all of this is to call a js method to reload the browser page
+  */
+  //Note to self: alternative to all of the above is to call a js method to reload the browser page
+  location.reload();
 };
