@@ -26,10 +26,11 @@
 }
 
 .images:hover {
+  transform: scale(1.05);
+  transition: 650ms ease;
   margin: 0px;
   border: 4px solid;
   opacity: 0.8;
-  /*transform: scale(1.1);*/
 }
 
 .gamepad {
@@ -40,6 +41,7 @@
   padding: 4vw;
   gap: 5px;
   justify-content: center;
+  min-height: 165px;
 }
 
 .showChoices {
